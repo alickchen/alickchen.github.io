@@ -84,16 +84,22 @@
 
 
 
-<meta name="description" content="mysql 5.7 增加用户并授权1、新建用户创建test用户，密码是1234。12345MySQL -u root -p CREATE USER “test”@”localhost” IDENTIFIED BY “1234”; #本地登录 CREATE USER “test”@”%” IDENTIFIED BY “1234”; #远程登录 quit mysql -utest -p #测试是否创建">
+<meta name="description" content="如果你对webpack还不熟的话，可以参考这片文章，我个人觉得写得很详细  
+入门Webpack，看这篇就够了在使用webpack打包一般项目（没有用到react／vue等框架的项目）时，如何更好的引入jquery 以及其插件呢？我在网上找到这两篇文章比较有用：  
+webpack多页应用架构系列（四）：老式jQuery插件还不能丢，怎么兼容？Webpack引入jquery及其插件的几种方法自己归">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mysql相关">
-<meta property="og:url" content="http://alickchen.tech/2017/02/16/aboutmysql/index.html">
+<meta property="og:title" content="使用webpack引入jquery及其插件">
+<meta property="og:url" content="http://alickchen.tech/2017/02/17/webpackwithjquery/index.html">
 <meta property="og:site_name" content="Alick Chen 的个人博客">
-<meta property="og:description" content="mysql 5.7 增加用户并授权1、新建用户创建test用户，密码是1234。12345MySQL -u root -p CREATE USER “test”@”localhost” IDENTIFIED BY “1234”; #本地登录 CREATE USER “test”@”%” IDENTIFIED BY “1234”; #远程登录 quit mysql -utest -p #测试是否创建">
-<meta property="og:updated_time" content="2017-02-16T13:24:02.109Z">
+<meta property="og:description" content="如果你对webpack还不熟的话，可以参考这片文章，我个人觉得写得很详细  
+入门Webpack，看这篇就够了在使用webpack打包一般项目（没有用到react／vue等框架的项目）时，如何更好的引入jquery 以及其插件呢？我在网上找到这两篇文章比较有用：  
+webpack多页应用架构系列（四）：老式jQuery插件还不能丢，怎么兼容？Webpack引入jquery及其插件的几种方法自己归">
+<meta property="og:updated_time" content="2017-02-17T14:22:26.212Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mysql相关">
-<meta name="twitter:description" content="mysql 5.7 增加用户并授权1、新建用户创建test用户，密码是1234。12345MySQL -u root -p CREATE USER “test”@”localhost” IDENTIFIED BY “1234”; #本地登录 CREATE USER “test”@”%” IDENTIFIED BY “1234”; #远程登录 quit mysql -utest -p #测试是否创建">
+<meta name="twitter:title" content="使用webpack引入jquery及其插件">
+<meta name="twitter:description" content="如果你对webpack还不熟的话，可以参考这片文章，我个人觉得写得很详细  
+入门Webpack，看这篇就够了在使用webpack打包一般项目（没有用到react／vue等框架的项目）时，如何更好的引入jquery 以及其插件呢？我在网上找到这两篇文章比较有用：  
+webpack多页应用架构系列（四）：老式jQuery插件还不能丢，怎么兼容？Webpack引入jquery及其插件的几种方法自己归">
 
 
 
@@ -121,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://alickchen.tech/2017/02/16/aboutmysql/"/>
+  <link rel="canonical" href="http://alickchen.tech/2017/02/17/webpackwithjquery/"/>
 
 
 
 
 
-  <title> Mysql相关 | Alick Chen 的个人博客 </title>
+  <title> 使用webpack引入jquery及其插件 | Alick Chen 的个人博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -270,7 +276,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://alickchen.tech/2017/02/16/aboutmysql/">
+  <link itemprop="mainEntityOfPage" href="http://alickchen.tech/2017/02/17/webpackwithjquery/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Alick Chen">
@@ -294,7 +300,7 @@
             
             
               
-                Mysql相关
+                使用webpack引入jquery及其插件
               
             
           </h1>
@@ -309,8 +315,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-16T21:20:34+08:00">
-                2017-02-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-17T22:09:18+08:00">
+                2017-02-17
               </time>
             
 
@@ -350,8 +356,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/16/aboutmysql/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/16/aboutmysql/" itemprop="commentCount"></span>
+                <a href="/2017/02/17/webpackwithjquery/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/17/webpackwithjquery/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -377,23 +383,20 @@
       
 
       
-        <h2 id="mysql-5-7-增加用户并授权"><a href="#mysql-5-7-增加用户并授权" class="headerlink" title="mysql 5.7 增加用户并授权"></a>mysql 5.7 增加用户并授权</h2><p>1、新建用户<br>创建test用户，密码是1234。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">MySQL -u root -p </div><div class="line">CREATE USER “test”@”localhost” IDENTIFIED BY “1234”; #本地登录 </div><div class="line">CREATE USER “test”@”%” IDENTIFIED BY “1234”; #远程登录 </div><div class="line">quit </div><div class="line">mysql -utest -p #测试是否创建成功</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>2、为用户授权</p>
-<p>a.授权格式：grant 权限 on 数据库.* to 用户名@登录主机 identified by “密码”;　</p>
-<p>b.登录MYSQL，这里以ROOT身份登录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p</div></pre></td></tr></table></figure></p>
-<p>c.为用户创建一个数据库(testDB)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">create database testDB; </div><div class="line">create database testDB default charset utf8 collate utf8_general_ci;</div></pre></td></tr></table></figure></p>
-<p>d.授权test用户拥有testDB数据库的所有权限：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">grant all privileges on testDB.* to “test”@”localhost” identified by “1234”; </div><div class="line">flush privileges; #刷新系统权限表</div></pre></td></tr></table></figure></p>
-<p>e.指定部分权限给用户:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">grant select,update on testDB.* to “test”@”localhost” identified by “1234”; </div><div class="line">flush privileges; #刷新系统权限表</div></pre></td></tr></table></figure></p>
-<p>f.授权test用户拥有所有数据库的某些权限： 　<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant select,delete,update,create,drop on . to test@”%” identified by “1234”; #”%” 表示对所有非本地主机授权，不包括localhost</div></pre></td></tr></table></figure></p>
-<p>3、删除用户<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p </div><div class="line">Delete FROM mysql.user Where User=”test” and Host=”localhost”; </div><div class="line">flush privileges; </div><div class="line">drop database testDB;</div></pre></td></tr></table></figure></p>
-<p>删除账户及权限：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">drop user 用户名@’%’; </div><div class="line">drop user 用户名@ localhost;</div></pre></td></tr></table></figure></p>
-<p>4、修改指定用户密码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p </div><div class="line">update mysql.user set authentication_string=password(“新密码”) where User=”test” and Host=”localhost”; </div><div class="line">flush privileges;</div></pre></td></tr></table></figure></p>
-<h2 id="查看MySQL端口号："><a href="#查看MySQL端口号：" class="headerlink" title="查看MySQL端口号："></a>查看MySQL端口号：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show global variables like &apos;port&apos;;</div></pre></td></tr></table></figure>
-<h2 id="MYSQL-–Subquery-returns-more-than-1-row查询结果多于一行"><a href="#MYSQL-–Subquery-returns-more-than-1-row查询结果多于一行" class="headerlink" title="MYSQL –Subquery returns more than 1 row查询结果多于一行"></a>MYSQL –Subquery returns more than 1 row查询结果多于一行</h2><p>Subquery returns more than 1 row表示子查询返回了多行数据<br>例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from table1 where table1.colums=(select columns from table2)</div></pre></td></tr></table></figure></p>
-<p>解决方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from table1 where table1.colums=any(select columns from table2)</div></pre></td></tr></table></figure></p>
-<p>any 就是从多个行当中取一行（每一次取一行，取完所有）；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">select* from student where </div><div class="line">id=any (select stu_id from score where stu_id in </div><div class="line">             (select stu_id from score where c_name=&apos;计算机&apos;) </div><div class="line">        and c_name=&apos;英语&apos;);</div></pre></td></tr></table></figure></p>
-<p>查询同时参加计算机和英语考试的学生的信息；<br>利用别名的方式更方便：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">select a.* from student a ,score b ,score c </div><div class="line">    -&gt; where a.id=b.stu_id</div><div class="line">    -&gt; and b.c_name=&apos;计算机&apos;</div><div class="line">    -&gt; and a.id=c.stu_id</div><div class="line">    -&gt; and c.c_name=&apos;英语&apos;;</div></pre></td></tr></table></figure></p>
+        <p>如果你对webpack还不熟的话，可以参考这片文章，我个人觉得写得很详细  </p>
+<h3 id="入门Webpack，看这篇就够了"><a href="#入门Webpack，看这篇就够了" class="headerlink" title="入门Webpack，看这篇就够了"></a><a href="http://www.jianshu.com/p/42e11515c10f#" target="_blank" rel="external">入门Webpack，看这篇就够了</a></h3><p>在使用webpack打包一般项目（没有用到react／vue等框架的项目）时，如何更好的引入jquery 以及其插件呢？我在网上找到这两篇文章比较有用：  </p>
+<h3 id="webpack多页应用架构系列（四）：老式jQuery插件还不能丢，怎么兼容？"><a href="#webpack多页应用架构系列（四）：老式jQuery插件还不能丢，怎么兼容？" class="headerlink" title="webpack多页应用架构系列（四）：老式jQuery插件还不能丢，怎么兼容？"></a><a href="http://www.tuicool.com/articles/bmAfqqy" target="_blank" rel="external">webpack多页应用架构系列（四）：老式jQuery插件还不能丢，怎么兼容？</a></h3><h3 id="Webpack引入jquery及其插件的几种方法"><a href="#Webpack引入jquery及其插件的几种方法" class="headerlink" title="Webpack引入jquery及其插件的几种方法"></a><a href="http://blog.csdn.net/yiifaa/article/details/51916560" target="_blank" rel="external">Webpack引入jquery及其插件的几种方法</a></h3><p>自己归纳总结了一下，下面两种方式比较实用：<br><a id="more"></a> </p>
+<h3 id="1-ProvidePlugin-expose-loader"><a href="#1-ProvidePlugin-expose-loader" class="headerlink" title="1.ProvidePlugin + expose-loader"></a>1.ProvidePlugin + expose-loader</h3><p>在webpack配置中引入ProvidePlugin插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">new webpack.ProvidePlugin(&#123;</div><div class="line">    $: &apos;jquery&apos;,</div><div class="line">    jQuery: &apos;jquery&apos;,</div><div class="line">    &apos;window.jQuery&apos;: &apos;jquery&apos;,</div><div class="line">    &apos;window.$&apos;: &apos;jquery&apos;,</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
+<p>ProvidePlugin的机制是：当webpack加载到某个js模块里，出现了未定义且名称符合（字符串完全匹配）配置中key的变量时，会自动require配置中value所指定的js模块。  </p>
+<p>接下来介绍expose-loader，这个loader的作用是，将指定js模块export的变量声明为全局变量。下面来看下expose-loader的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  test: require.resolve(&apos;jquery&apos;),  // 此loader配置项的目标是NPM中的jquery</div><div class="line">  loader: &apos;expose?$!expose?jQuery&apos;, // 先把jQuery对象声明成为全局变量`jQuery`，再通过管道进一步又声明成为全局变量`$`</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<p>如果要使用expose-loader的话，需要在js中使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import $ from &apos;expose?$!jquery&apos;</div><div class="line">import &apos;jquery-ui&apos; //插件可用</div></pre></td></tr></table></figure></p>
+<p>你或许会问，有了ProvidePlugin为嘛还需要expose-loader？问得好，如果你所有的jQuery插件都是用webpack来加载的话，的确用ProvidePlugin就足够了；但理想是丰满的，现实却是骨感的，总有那么些需求是只能用 &lt;script&gt; 来加载的。<br>==这里我的理解就是，如果一些比较先进的jquery插件，支持webpack加载的话，就直接用ProvidePlugin，声明了$对象，就可以直接用。但是一些旧的插件，并没有那么先进去支持webpack加载，只能用import形式直接引入，所以旧需要expose-loader来实现加载。==</p>
+<h3 id="2-externals"><a href="#2-externals" class="headerlink" title="2.externals"></a>2.externals</h3><p>externals是webpack配置中的一项，用来将某个全局变量 “伪装” 成某个js模块的exports，如下面这个配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">externals: &#123;</div><div class="line">      &apos;jquery&apos;: &apos;window.jQuery&apos;,</div><div class="line">    &#125;,</div></pre></td></tr></table></figure></p>
+<p>那么，当某个js模块显式地调用 var $ = require(‘jquery’) 的时候，就会把 window,jQuery 返回给它.   </p>
+<p>与上述 ProvidePlugin + expose-loader 的方案相反，此方案是先用 &lt;script&gt; 加载的jQuery满足老式jQuery插件的需要，再通过externals将其转换成符合模块化要求的exports。</p>
+<p>我个人并不太看好这种做法，毕竟这就意味着jQuery脱离NPM的管理了，不过某些童鞋有其它的考虑，例如为了加快每次打包的时间而把jQuery这些比较大的第三方库给分离出去（直接调用公共CDN的第三方库？），也算是有一定的价值。<br>==这个方式其实就是直接在页面中引入jquery和jquery插件，只有自己编写的代码用 webpack 来模块化。第三方插件虽然都单独用了一个 http 请求，但它们改动不大，最终都会被浏览器缓存起来。==</p>
+<p>jQuery 直接在 html 中引入，然后在 webpack 中把它配置为全局即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">externals: &#123;</div><div class="line">    jquery: &apos;window.$&apos;</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<p>使用则直接 require 进来，反正 webpack 也不会把它打包进来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var $ = require(&apos;jquery&apos;);</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -420,8 +423,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/16/diguilianxi/" rel="next" title="递归练习">
-                <i class="fa fa-chevron-left"></i> 递归练习
+              <a href="/2017/02/16/aboutjsonp/" rel="next" title="关于jsonp原理">
+                <i class="fa fa-chevron-left"></i> 关于jsonp原理
               </a>
             
           </div>
@@ -429,10 +432,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/16/aboutjsonp/" rel="prev" title="关于jsonp原理">
-                关于jsonp原理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -458,8 +457,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/16/aboutmysql/"
-           data-title="Mysql相关" data-url="http://alickchen.tech/2017/02/16/aboutmysql/">
+      <div class="ds-thread" data-thread-key="2017/02/17/webpackwithjquery/"
+           data-title="使用webpack引入jquery及其插件" data-url="http://alickchen.tech/2017/02/17/webpackwithjquery/">
       </div>
     
   </div>
@@ -579,7 +578,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql-5-7-增加用户并授权"><span class="nav-number">1.</span> <span class="nav-text">mysql 5.7 增加用户并授权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看MySQL端口号："><span class="nav-number">2.</span> <span class="nav-text">查看MySQL端口号：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MYSQL-–Subquery-returns-more-than-1-row查询结果多于一行"><span class="nav-number">3.</span> <span class="nav-text">MYSQL –Subquery returns more than 1 row查询结果多于一行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#入门Webpack，看这篇就够了"><span class="nav-number">1.</span> <span class="nav-text">入门Webpack，看这篇就够了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack多页应用架构系列（四）：老式jQuery插件还不能丢，怎么兼容？"><span class="nav-number">2.</span> <span class="nav-text">webpack多页应用架构系列（四）：老式jQuery插件还不能丢，怎么兼容？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Webpack引入jquery及其插件的几种方法"><span class="nav-number">3.</span> <span class="nav-text">Webpack引入jquery及其插件的几种方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-ProvidePlugin-expose-loader"><span class="nav-number">4.</span> <span class="nav-text">1.ProvidePlugin + expose-loader</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-externals"><span class="nav-number">5.</span> <span class="nav-text">2.externals</span></a></li></ol></div>
             
 
           </div>
